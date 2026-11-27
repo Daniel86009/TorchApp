@@ -39,8 +39,7 @@
             border: solid 1px #888;
             cursor: pointer;
         }
-
-        /* Modal overlay */
+ 
         #premiumModal {
             display: none;
             position: fixed;
@@ -53,8 +52,7 @@
             z-index: 1000;
             box-sizing: border-box;
         }
-
-        /* Bottom sheet */
+ 
         #modalContent {
             position: absolute;
             left: 0;
@@ -106,7 +104,6 @@
             margin-bottom: 25px;
         }
 
-        /* Subscription options */
         .plan {
             width: 100%;
             max-width: 450px;
@@ -142,8 +139,7 @@
             width: 19px;
             height: 19px;
         }
-
-        /* Subscribe button */
+ 
         #subscribeButton {
             width: 100%;
             max-width: 450px;
@@ -176,7 +172,6 @@
 
     <button id="helpButton">Help?</button>
 
-    <!-- Premium Modal -->
     <div id="premiumModal">
 
         <div id="modalContent">
@@ -215,9 +210,7 @@
 
             <button id="subscribeButton">Subscribe</button>
 
-            <p id="disclaimer">
-                Subscription options are currently unavailable.
-            </p>
+            <p id="disclaimer">Subscriptions are non refundable. <br> $4.99 cancelation fee.</p>
 
         </div>
     </div>
@@ -227,24 +220,19 @@
         const premiumModal = document.getElementById("premiumModal");
         const closeModal = document.getElementById("closeModal");
 
-        // Open modal
         helpButton.addEventListener("click", () => {
             premiumModal.style.display = "block";
         });
 
-        // Close modal
         closeModal.addEventListener("click", () => {
             premiumModal.style.display = "none";
         });
-
-        // Close by clicking outside
+ 
         premiumModal.addEventListener("click", (event) => {
             if (event.target === premiumModal) {
                 premiumModal.style.display = "none";
             }
         });
-
-        // Subscription selection
         const plans = document.querySelectorAll(".plan");
 
         plans.forEach(plan => {
@@ -254,12 +242,6 @@
                 plan.querySelector("input").checked = true;
             });
         });
-
-        // Subscribe button intentionally does nothing
-        document.getElementById("subscribeButton")
-            .addEventListener("click", () => {
-                // Payment functionality will be added later.
-            });
     </script>
         <!-- <img src="./torch image.png" style="width: 130vw; heigh: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"> -->
       <!-- <button style="position: absolute; bottom: 20px; right: 20px; color: white; padding: 5px; background: #666; border-radius: 4px; border: solid 1px #888;">Help?</button> -->
